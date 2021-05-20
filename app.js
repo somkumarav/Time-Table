@@ -57,20 +57,3 @@ function goToPage(subject) {
     if (link.subject == subject) window.open(link.url, '_blank');
   });
 }
-
-// comments
-
-// const buttons = document.querySelectorAll('.dms');
-// const buttons = document.querySelectorAll('.ci');
-// const buttons = document.querySelectorAll('.os');
-// const buttons = document.querySelectorAll('.coa');
-// const buttons = document.querySelector('.os-lab');
-// const buttons = document.querySelectorAll('.gt');
-// const buttons = document.querySelectorAll('.digital-lab');
-// const buttons = document.querySelectorAll('.pe');
-
-// if (button.classList.contains('ci'))
-//   window.open(
-//     'https://meet.google.com/lookup/fl62oqn4kb?authuser=0&hs=179',
-//     '_blank'
-//   );
