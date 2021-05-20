@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+:root {
+  --backgroundColorDays: rgba(119, 119, 119, 0.75);
+  --backgroundColorDark: rgba(43, 42, 42, 0.75);
+  --backgroundColorLight: rgba(119, 119, 119, 0.75);
+  --colorLight: rgba(255, 255, 255, 0.75);
+  /* --backgroundColor: l */
+  /* --dms: #d39d5796;
+  --ci: #4d95bb;
+  --os: #805ac5;
+  --coa: #c05050;
+  --gt: #92a4ad;
+  --lab: #62adb4; */
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.btn {
+  height: 100px;
+  width: 200px;
+  border: 1px solid #222;
+  line-height: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.day {
+  background-color: var(--backgroundColorDays);
+}
+
+.dms,
+.ci,
+.os,
+.coa,
+.os-lab,
+.gt,
+.digital-lab,
+.pe,
+.ci,
+.cfml {
+  background-color: var(--backgroundColorDark);
+  color: var(--colorLight);
+}
+
+.dms:hover,
+.ci:hover,
+.os:hover,
+.coa:hover,
+.os-lab:hover,
+.gt:hover,
+.digital-lab:hover,
+.pe:hover,
+.ci:hover,
+.cfml:hover {
+  background-color: var(--backgroundColorLight);
+  color: #222;
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: repeat(6, 200px);
+  grid-template-rows: repeat(7, 100px);
+  border: 2px solid #222;
+}
+
+.main div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.transparent {
+  background-color: var(--backgroundColorLight);
+  border: 1px solid #222;
+}
+
+.hl {
+  background-color: #222;
+  width: 200px;
+  height: 2px;
+}
+
+/* .dms {
+  background-color: var(--dms);
+}
+
+.ci {
+  background-color: var(--ci);
+}
+
+.os {
+  background-color: var(--os);
+}
+
+.coa {
+  background-color: var(--coa);
+}
+
+.os-lab {
+  background-color: var(--lab);
+}
+
+.gt {
+  background-color: var(--gt);
+}
+
+.digital-lab {
+  background-color: var(--lab);
+} */
