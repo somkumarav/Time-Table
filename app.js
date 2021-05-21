@@ -36,6 +36,7 @@ const links = [
 
 // SELECTOR
 const buttons = document.querySelectorAll('.btn');
+const display = document.querySelector('.display');
 
 // EVENT LISTNER
 buttons.forEach((button) => {
@@ -44,6 +45,16 @@ buttons.forEach((button) => {
     console.log(subject);
     goToPage(subject);
   });
+});
+
+window.addEventListener('blur', () => {
+  display.classList.add('hidden');
+});
+window.addEventListener('focus', () => {
+  display.classList.remove('hidden');
+  setTimeout(() => {
+    display.classList.add('hidden');
+  }, 4000);
 });
 
 // FUNCTIONS
