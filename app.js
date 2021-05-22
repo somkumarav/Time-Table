@@ -47,15 +47,15 @@ buttons.forEach((button) => {
   });
 });
 
-window.addEventListener('blur', () => {
-  display.classList.add('hidden');
-});
-window.addEventListener('focus', () => {
-  display.classList.remove('hidden');
-  setTimeout(() => {
-    display.classList.add('hidden');
-  }, 4000);
-});
+// window.addEventListener('blur', () => {
+//   display.classList.add('hidden');
+// });
+// window.addEventListener('focus', () => {
+//   display.classList.remove('hidden');
+//   setTimeout(() => {
+//     display.classList.add('hidden');
+//   }, 4000);
+// });
 
 // FUNCTIONS
 function goToPage(subject) {
