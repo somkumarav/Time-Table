@@ -34,6 +34,39 @@ const links = [
   },
 ];
 
+const weekdays = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+// VARIABLE
+let today = new Date();
+let day = today.getDay();
+day = weekdays[day];
+let month = today.getMonth();
+month = months[month];
+let date = today.getDate();
+
 // SELECTOR
 const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('.display');
@@ -63,3 +96,7 @@ function goToPage(subject) {
     if (link.subject == subject) window.open(link.url, '_blank');
   });
 }
+
+// Change Display
+display.innerHTML = `<h4>${day}</h4>
+          <h5>${month} ${date}</h5>`;

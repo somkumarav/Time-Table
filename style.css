@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
-
 /* font-family: 'Poppins', sans-serif; */
+
 :root {
   --balck: #000000;
   --white: #ffffff;
@@ -10,6 +10,8 @@
 
   --borderBlack: 1px solid #000000;
   --bordeerWhite: 1px solid #ffffff;
+
+  --poppins: 'Poppins', sans-serif;
 }
 
 *,
@@ -22,44 +24,8 @@
 
 body {
   background-color: var(--balck);
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-h4 {
-  margin-bottom: 10px;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.texts {
-  height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
   color: var(--white);
-}
-
-.table {
-  height: 70vh;
-  display: grid;
-  grid-template-columns: repeat(6, 180px);
-  grid-template-rows: repeat(7, 90px);
-  justify-content: center;
-  align-content: center;
+  font-family: var(--poppins);
 }
 
 .btn {
@@ -72,16 +38,58 @@ h4 {
   transition: all 0.2s linear;
 }
 
-.display {
-  text-transform: capitalize;
-  color: var(--white);
-  font-family: 'Poppins', sans-serif;
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.day {
+header {
+  padding-top: 10px;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section .display {
+  width: 65%;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.display h4 {
+  font-family: var(--poppins);
+  font-size: 40px;
   color: var(--ligthPurple);
-  font-size: 60px;
-  font-weight: 400;
+}
+
+.display h5 {
+  font-size: 20px;
+  color: var(--white);
+}
+
+section .table {
+  height: 70%;
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(6, 1.5fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 
 .half-border-topleft {
@@ -148,12 +156,16 @@ h4 {
 }
 
 @media screen and (max-width: 1000px) {
-  .container {
-    width: 90%;
-    margin: 0 auto;
+  .btn {
+    font-size: 14px;
+    font-weight: 400;
   }
 
-  .texts {
+  span {
+    display: none;
+  }
+
+  header {
     height: 15vh;
     display: flex;
     flex-direction: column;
@@ -163,33 +175,39 @@ h4 {
     font-size: 12px;
     color: var(--white);
   }
-  .table {
-    height: 70vh;
-    display: grid;
-    grid-template-columns: repeat(6, 60px);
-    grid-template-rows: repeat(7, 70px);
+
+  .main {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .btn {
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    background-color: transparent;
-    font-weight: 400;
+  section .display {
+    width: 65%;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .display h4 {
+    font-family: var(--poppins);
+    font-size: 30px;
+    color: var(--ligthPurple);
+  }
+
+  .display h5 {
+    font-size: 18px;
     color: var(--white);
   }
 
-  span {
-    display: none;
-  }
-
-  .display {
-    margin-top: 5px;
-    margin-left: 0;
-  }
-
-  .day {
-    font-size: 40px;
+  section .table {
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 0.5fr);
   }
 
   .half-border-topleft {
