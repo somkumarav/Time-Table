@@ -57,7 +57,7 @@ buttons.forEach((button) => {
           </div>
           <div class="footer-buttons">
             <a href=${sub.classroomLink} target="_blank" class="classroom">Classroom</a>
-            <a href=${sub.meetLink} target="_blank" class="meet">meet</a>
+            <a href=${sub.meetLink} target="_blank" class="meet">Meet</a>
           </div>
         </div>
       </div>`;
