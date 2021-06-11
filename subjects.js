@@ -81,7 +81,7 @@ const subjects = [
   },
   {
     subject: 'cfml',
-    name: '',
+    name: 'Not yet defined',
     periods: [61, 62],
     faculty: '',
     slot: '',
