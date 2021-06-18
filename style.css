@@ -34,7 +34,7 @@ body {
 a{
   text-decoration: none;
   color: var(--white);
-  cursor: none;
+  cursor: auto;
 }
 
 .container {
@@ -132,6 +132,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  cursor: pointer;
   border-radius: 5px;
   color: var(--white);
   font-family: var(--poppins);
