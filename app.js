@@ -1,39 +1,3 @@
-// LINKS FOR THE CLASSES
-const links = [
-  {
-    subject: 'dms',
-    url: 'https://meet.google.com/lookup/fl62oqn4kb?authuser=0&hs=179',
-  },
-  {
-    subject: 'ci',
-    url: 'https://meet.google.com/lookup/f55pnueayr?authuser=0&hs=179',
-  },
-  {
-    subject: 'os',
-    url: 'https://meet.google.com/lookup/gzoosfb3cq?authuser=0&hs=179',
-  },
-  {
-    subject: 'coa',
-    url: 'https://meet.google.com/lookup/fgohtz74gy?authuser=0&hs=179',
-  },
-  {
-    subject: 'os-lab',
-    url: 'https://meet.google.com/lookup/fovzsojpz4?authuser=0&hs=179',
-  },
-  {
-    subject: 'gt',
-    url: 'https://meet.google.com/lookup/ea6uhdtjbn?authuser=0&hs=179',
-  },
-  {
-    subject: 'digital-lab',
-    url: 'https://meet.google.com/lookup/a5sopjb25y?authuser=0&hs=179',
-  },
-  {
-    subject: 'pe',
-    url: 'https://meet.google.com/lookup/fs2hwqvcqf?authuser=0&hs=179',
-  },
-];
-
 const weekdays = [
   'Sunday',
   'Monday',
@@ -70,33 +34,54 @@ let date = today.getDate();
 // SELECTOR
 const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('.display');
+const footer = document.querySelector('footer');
+
+// INVOKE FUNCTIONS
+changeDisplay();
+classMap();
 
 // EVENT LISTNER
+// Button:click
 buttons.forEach((button) => {
-  button.addEventListener('click', (e) => {
-    const subject = e.currentTarget.dataset.subject;
-    console.log(subject);
-    goToPage(subject);
+  button.addEventListener('click', () => {
+    footer.classList.remove('hide-footer');
+    subjects.forEach((sub) => {
+      if (sub.periods.includes(parseInt(button.dataset.table))) {
+        footer.innerHTML = `<div class="footer-main">
+        <div class="heading">
+          <h2>${sub.subject}</h2>
+        </div>
+        <div class="body">
+          <div>
+            <h2><span>${sub.name}</span></h2>
+            <h2><span>faculty: </span>${sub.faculty}</h2>
+            <h2><span>slot: </span>${sub.slot}</h2>
+            <h2><span>subject code: </span> ${sub.subjectCode}</h2>
+          </div>
+          <div class="footer-buttons">
+            <a href=${sub.classroomLink} target="_blank" class="classroom">Classroom</a>
+            <a href=${sub.meetLink} target="_blank" class="meet">Meet</a>
+          </div>
+        </div>
+      </div>`;
+      }
+    });
   });
 });
 
-// window.addEventListener('blur', () => {
-//   display.classList.add('hidden');
-// });
-// window.addEventListener('focus', () => {
-//   display.classList.remove('hidden');
-//   setTimeout(() => {
-//     display.classList.add('hidden');
-//   }, 4000);
-// });
-
 // FUNCTIONS
-function goToPage(subject) {
-  links.forEach((link) => {
-    if (link.subject == subject) window.open(link.url, '_blank');
+// mapping classes
+function classMap() {
+  buttons.forEach((button) => {
+    subjects.forEach((sub) => {
+      if (sub.periods.includes(parseInt(button.dataset.table)))
+        button.textContent = sub.subject;
+    });
   });
 }
 
 // Change Display
-display.innerHTML = `<h4>${day}</h4>
+function changeDisplay() {
+  display.innerHTML = `<h4>${day}</h4>
           <h5>${month} ${date}</h5>`;
+}

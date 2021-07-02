@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 /* font-family: 'Poppins', sans-serif; */
 
+/* VARIABLES */
 :root {
   --balck: #000000;
   --white: #ffffff;
-  --balckMat: #222222;
+  --balckMat: #28282a;
+  --buttonBlack: #454548;
   --deepPurple: #4527a0;
   --ligthPurple: #673ab7;
 
@@ -14,6 +16,7 @@
   --poppins: 'Poppins', sans-serif;
 }
 
+/* DEFAULT */
 *,
 *::after,
 *::before {
@@ -28,6 +31,17 @@ body {
   font-family: var(--poppins);
 }
 
+a{
+  text-decoration: none;
+  color: var(--white);
+  cursor: auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .btn {
   font-family: 'Poppins', sans-serif;
   color: var(--white);
@@ -38,11 +52,11 @@ body {
   transition: all 0.2s linear;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
+.hide-footer {
+  display: none;
 }
 
+/* HEADER */
 header {
   padding-top: 10px;
   height: 10vh;
@@ -52,14 +66,16 @@ header {
   justify-content: center;
 }
 
+/* SECTION */
 section {
+  height: 80vh;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
 }
 
 .main {
-  height: 90vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,13 +101,101 @@ section .display {
 }
 
 section .table {
-  height: 70%;
+  height: 85%;
   width: 65%;
   display: grid;
   grid-template-columns: repeat(6, 1.5fr);
   grid-template-rows: repeat(7, 1fr);
 }
 
+/* FOOTER */
+footer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  transition: all 0.4s linear;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-buttons a {
+  margin: 15px 0px;
+  height: 70px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--white);
+  font-family: var(--poppins);
+  box-shadow: 4px 4px 6px var(--balck);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-buttons a:hover {
+  transform: scale(0.98);
+}
+
+.classroom {
+  background-color: var(--buttonBlack);
+  border: 1px solid var(--buttonBlack);
+}
+
+.meet {
+  background-color: var(--ligthPurple);
+  border: 1px solid var(--ligthPurple);
+}
+
+footer span {
+  color: var(--ligthPurple);
+}
+
+.footer-main {
+  width: 65%;
+  background-color: var(--balckMat);
+  border-radius: 6px 6px 0px 0px;
+}
+
+footer .heading {
+  background-color: var(--ligthPurple);
+  border-radius: 6px 6px 0px 0px;
+  box-shadow: 0px 7px 10px var(--balck);
+  padding: 0px 30px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+footer .heading h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+footer .body {
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+footer .body h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 55px;
+  text-transform: capitalize;
+}
+
+/* OUTSIDE BUTTON STYLES */
 .half-border-topleft {
   border-bottom: var(--bordeerWhite);
   border-top: none;
@@ -155,7 +259,9 @@ section .table {
   color: var(--white);
 }
 
-@media screen and (max-width: 1000px) {
+/* MOBILE */
+@media screen and (max-width: 800px) {
+  /* DEFAULT */
   .btn {
     font-size: 14px;
     font-weight: 400;
@@ -165,6 +271,11 @@ section .table {
     display: none;
   }
 
+  footer span {
+    display: contents;
+  }
+
+  /* HEADER */
   header {
     height: 15vh;
     display: flex;
@@ -176,16 +287,24 @@ section .table {
     color: var(--white);
   }
 
-  .main {
-    height: 85vh;
+  /* SECTION */
+
+  section {
+    height: 70vh;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 
   section .display {
     width: 65%;
     padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main {
+    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -203,12 +322,99 @@ section .table {
   }
 
   section .table {
-    height: 70%;
+    height: 80%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, 0.5fr);
   }
+
+  /* Footer */
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .footer-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-buttons a {
+    margin: 0px 10px 15px 10px;
+    height: 50px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px var(--balck);
+    color: var(--white);
+    font-family: var(--poppins);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .footer-buttons a:hover {
+    transform: scale(0.98);
+  }
+
+  .classroom {
+    background-color: var(--buttonBlack);
+    border: 1px solid var(--buttonBlack);
+  }
+
+  .meet {
+    background-color: var(--ligthPurple);
+    border: 1px solid var(--ligthPurple);
+  }
+
+  footer span {
+    color: var(--ligthPurple);
+  }
+
+  .footer-main {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    background-color: var(--balckMat);
+  }
+
+  footer .heading {
+    background-color: var(--ligthPurple);
+    /* border-radius: 10px 10px 0px 0px; */
+    padding: 0px 30px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+  }
+
+  footer .heading h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+  footer .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer .body h2 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    text-transform: capitalize;
+  }
+
+  /* Buttons */
 
   .half-border-topleft {
     border-bottom: var(--bordeerWhite);
